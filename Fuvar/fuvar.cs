@@ -42,6 +42,15 @@ namespace Fuvar
             }
             //6.
             Console.WriteLine($"6. feladat: {fuvarok.Sum(x => x.megtett_táv)*1.6:0.00}km");
+            //7.
+            Class1 max = fuvarok.OrderBy(x => x.ut_ideje).Last();
+            Console.WriteLine("7. feladat: Leghosszabb fuvar:");
+            Console.WriteLine($"\tFuvar hossza {max.ut_ideje} másodperc");
+            Console.WriteLine($"\tTaxi azonosító {max.azonosito}");
+            Console.WriteLine($"\tMegtett táv {max.megtett_táv} km");
+            Console.WriteLine($"\tViteldij {max.viteldij}$");
+
+
         }
     }
 }
