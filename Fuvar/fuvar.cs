@@ -18,9 +18,30 @@ namespace Fuvar
                 fuvarok.Add(new Class1(x));
             }
 
-
-
-
+            //3.
+            Console.WriteLine($"3. feladat: {fuvarok.Count} fuvar");
+            //4.
+            Console.WriteLine($"4. feladat: {fuvarok.Where(x => x.azonosito == 6185).Count()} fuvar alatt: {fuvarok.Where(x => x.azonosito == 6185).Sum(x => x.viteldij)}Ft");
+            //5.
+            Console.WriteLine("5. feladat:");
+            Dictionary<string, int> fizetési_mod = new Dictionary<string, int>();
+            foreach (var f in fuvarok)
+            {
+                if (fizetési_mod.ContainsKey(f.fizetésimoed))
+                {
+                    fizetési_mod[f.fizetésimoed]++;
+                }
+                else
+                {
+                    fizetési_mod.Add(f.fizetésimoed, 1);
+                }
+            }
+            foreach (var x in fizetési_mod)
+            {
+                Console.WriteLine($"\t{x.Key}: {x.Value} fuvar");
+            }
+            //6.
+            Console.WriteLine($"6. feladat: {fuvarok.Sum(x => x.megtett_táv)*1.6:0.00}km");
         }
     }
 }
