@@ -50,7 +50,19 @@ namespace Fuvar
             Console.WriteLine($"\tMegtett táv {max.megtett_táv} km");
             Console.WriteLine($"\tViteldij {max.viteldij}$");
 
+            //8.
+            StreamWriter fs = new StreamWriter("hibák.txt");
 
+
+            foreach (var x in fuvarok)
+            {
+                if (x.ut_ideje>0 && x.viteldij>0 && x.megtett_táv == 0)
+                {
+                    fs.WriteLine($"{x.azonosito};{x.indulás};{x.ut_ideje};{x.megtett_táv};{x.viteldij};{x.borravalo};{x.fizetésimoed}");
+                }
+            }
+            
+            
         }
     }
 }
