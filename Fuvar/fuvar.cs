@@ -53,6 +53,7 @@ namespace Fuvar
             //8.
             StreamWriter fs = new StreamWriter("hibák.txt");
 
+            fuvarok.Where(x => x.ut_ideje > 0 && x.viteldij > 0 && x.megtett_táv == 0).OrderBy(x => x.indulás).ForEach(x => x.);
 
             foreach (var x in fuvarok)
             {
